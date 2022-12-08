@@ -1,4 +1,7 @@
 # water-scraper
+Current state: Broken
+
+
 Just a side project to alert me when water systems went down / up.
 
 This program keeps watching the water company from my city, and in case of the status changes from red to yellow/green, it sends me a message on Telegram.
