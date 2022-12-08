@@ -62,11 +62,12 @@ def send_message(message):
     api_url = f'https://api.telegram.org/bot{api_token}/sendMessage'
 
     requests.post(
-            api_url,
-            json={
-                'chat_id': chat_id,
-                'text': message},
-            timeout=5)
+        api_url,
+        json={
+            'chat_id': chat_id,
+            'text': message},
+        timeout=5)
+
 
 def lambda_handler(_event, _context):
     """"Lambda Handler default for AWS Lambda"""
@@ -93,10 +94,10 @@ def lambda_handler(_event, _context):
 
     if "#f51616" in str(status):
         current_status = "offline"
-        current_message = "Interrupção no serviço de água"
+        current_message = "Interrupção no serviço"
     else:
         current_status = "online"
-        current_message = "Serviço de água voltou a funcionar"
+        current_message = "Serviço voltou a funcionar"
 
     if current_status != last_status:
         print("Changes found! Current status:" + current_status)
